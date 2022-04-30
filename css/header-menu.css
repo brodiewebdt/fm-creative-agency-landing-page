@@ -1,0 +1,225 @@
+:root {
+    /* Primary Colors */
+    --brand-primary: hsl(0, 93%, 64%);
+    --hover-primary: hsl(0, 100%, 79%);
+    --hover-dark: hsl(240, 12%, 30%);
+    /* Neutral Colors */
+    --text-dark: hsl(0, 0%, 0%);
+    --color-dark: hsl(240, 14%, 11%);
+    --color-light: hsl(0, 0%, 100%);
+
+    /* Font Family */
+    --ff-serif: serif;
+    --ff-sans-serif: "Commissioner", sans-serif;
+    /* Font Sizes */
+    --fs-150: 9.375rem;
+    --fs-96: 6rem;
+    --fs-80: 5rem;
+    --fs-72: 4.5rem;
+    --fs-64: 4rem;
+    --fs-56: 3.5rem;
+    --fs-48: 3rem;
+    --fs-40: 2.5rem;
+    --fs-36: 2.25rem;
+    --fs-32: 2rem;
+    --fs-24: 1.5rem;
+    --fs-28: 1.75rem;
+    --fs-20: 1.25rem;
+    --fs-18: 1.125rem;
+    --fs-16: 1rem;
+    --fs-15: 0.9375rem;
+    --fs-14: 0.875rem;
+    --fs-12: 0.75rem;
+    /* Font Weights */
+    --fw-900: 900;
+    --fw-800: 800;
+    --fw-700: 700;
+    --fw-600: 600;
+    --fw-500: 500;
+    --fw-400: 400;
+    --fw-300: 300;
+    /* Line Height */
+    --lh-88: 5.5rem;
+    --lh-72: 4.5rem;
+    --lh-64: 4rem;
+    --lh-56: 3.5rem;
+    --lh-55: 3.4375rem;
+    --lh-48: 3rem;
+    --lh-44: 2.75rem;
+    --lh-40: 2.5rem;
+    --lh-36: 2.25rem;
+    --lh-32: 2rem;
+    --lh-30: 1.875rem;
+    --lh-28: 1.75rem;
+    --lh-26: 1.625rem;
+    --lh-25: 1.5625rem;
+    --lh-15: 0.9375rem;
+    /* Spacer */
+    --spacer: 1rem;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Commissioner", sans-serif;
+}
+
+.sr-only {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    white-space: nowrap !important;
+}
+
+/************** Header Styles ***************/
+.header {
+    background-color: var(--color-light);
+    color: #222;
+    padding: 2.5rem 1.5rem;
+}
+
+.logo {
+    width: 160px;
+}
+
+.nav-list {
+    position: relative;
+    display: none;
+}
+
+.nav-list.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+
+    position: absolute;
+    right: 2rem;
+    top: 7rem;
+    width: 250px;
+
+    background-color: var(--color-dark);
+    font-size: var(--fs-18);
+    line-height: var(--lh-32);
+    padding: 2rem 1.5rem;
+}
+
+.nav-list a {
+    align-self: center;
+    color: var(--color-light);
+}
+
+.nav-list a:hover,
+.nav-list a:focus {
+    font-weight: var(--fw-700);
+}
+
+.toggle {
+    position: absolute;
+    right: 2rem;
+    top: 2.5rem;
+
+    background-color: transparent;
+    background-image: url(../assets/mobile/icon-hamburger.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 24px;
+    border: none;
+    height: 32px;
+    width: 32px;
+
+    cursor: pointer;
+}
+
+.toggle.open {
+    background-image: url(../assets/mobile/icon-cross.svg);
+}
+
+@media (min-width: 767px) {
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        /* Gradient used for the two colors in the header */
+        background: rgb(254, 254, 254);
+        background: linear-gradient(
+            90deg,
+            rgba(254, 254, 254, 1) 0%,
+            rgba(255, 255, 255, 1) 43%,
+            rgba(249, 79, 79, 1) 43%,
+            rgba(249, 79, 79, 1) 100%
+        );
+        padding: 3.5rem 2.5rem;
+    }
+
+    .nav-list {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+
+        font-size: var(--fs-15);
+        height: 100%;
+        padding-top: 0;
+    }
+
+    .toggle {
+        display: none;
+    }
+}
+
+@media (min-width: 1080px) {
+    .header {
+        /* Gradient used for the two colors in the header */
+        background: linear-gradient(
+            90deg,
+            rgba(254, 254, 254, 1) 0%,
+            rgba(255, 255, 255, 1) 35%,
+            rgba(249, 79, 79, 1) 35%,
+            rgba(249, 79, 79, 1) 100%
+        );
+
+        padding-inline: 5rem;
+    }
+
+    .nav-list {
+        gap: 2rem;
+    }
+    .btn-menu {
+        background-color: var(--color-dark);
+        padding: 1.25rem 2.75rem;
+    }
+}
+
+@media (min-width: 1280px) {
+    .header {
+        /* Gradient used for the two colors in the header */
+        background: linear-gradient(
+            90deg,
+            rgba(254, 254, 254, 1) 0%,
+            rgba(255, 255, 255, 1) 50%,
+            rgba(249, 79, 79, 1) 50%,
+            rgba(249, 79, 79, 1) 100%
+        );
+
+        padding-inline: 6rem;
+    }
+}
+
+@media (min-width: 1366px) {
+    .header {
+        padding-inline: 10rem;
+    }
+}
